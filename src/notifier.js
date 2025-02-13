@@ -9,6 +9,8 @@
     this.info = [];
     this.warning = [];
     this.error = [];
+    this.confirm = [];
+    this.success = [];
     this.widgets = [];
     this.queue = [];
     this.messageWaitingTime = 3000;
@@ -32,6 +34,14 @@
       case 'error':
         this.error.unshift(message);
         icon = '/Error.png';
+        break;
+      case 'confirm':
+        this.confirm.unshift(message);
+        icon = '/Confirmation.png';
+        break;
+      case 'success':
+        this.success.unshift(message);
+        icon = '/Success.png';
         break;
       default:
         if (typeof message === 'string') {
@@ -69,6 +79,7 @@
     var body = document.createElement('div');
     body.className = 'notificationMessage';
     var messageParagraph = document.createElement('p');
+    messageParagraph.title = message
     messageParagraph.innerText = message;
     body.appendChild(messageParagraph);
     this.queue[0].appendChild(body);
@@ -80,7 +91,6 @@
   }
 
   function showNotification() {
-    console.log(document.getElementById('notifications'));
     if (this.queue[this.queue.length - 1] && !this.queueWaiting) {
       this.queueWaiting = true;
       this.container.appendChild(this.queue[this.queue.length - 1]);

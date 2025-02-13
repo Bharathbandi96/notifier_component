@@ -1,14 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-    <div id="notifications">
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <h1>Notifier Component</h1>
+      <p>Welcome to the Witness Notifier Component! This is a reusable global-level notification system that supports
+        multiple types of notifications:</p>
+      <ol>
+        <li>Information</li>
+        <li>Confirmation</li>
+        <li>Success</li>
+        <li>Warning</li>
+        <li>Error</li>
+      </ol>
+      <br>
+      <h2>Note: You can see the sample notifications popping up once the application is loaded.</h2>
+      <br>
+      <div>
+        <strong>How to Use</strong>
+        <div>To trigger a notification, simply call the following function from anywhere in your application</div>
+        <h3>Notifier.notify(message, notifier_type);</h3>
+        <strong>Example Usage</strong>
+      <div>Open the browser console and execute:</div>
+        <h3>Notifier.notify("This is a success message!", "success");</h3>
+      </div>
+
+      <strong>Try It Out!</strong>
+      <div></div>Once the application loads, you can see sample notifications in action. Feel free to experiment by passing
+      different messages and notification types ('information', 'confirmation', 'success', 'warning', 'error').</div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+  <div id="notifications">
+</body>
+
 </html>
